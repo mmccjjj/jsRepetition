@@ -354,19 +354,11 @@ function operateOnNumbers(numbers, operation) {
     operation(number);
   })
 }
+https://www.google.com/search?q=tltr&oq=tltr&gs_lcrp=su&sourceid=chrome&ie=UTF-8
 
-function square(number) {
-  console.log(number* number);
-  
-}
+/* operateOnNumbers([1, 2, 3], square); */
 
-function double(number) {
-  console.log(Math.pow(number, 2));
-}
-
-operateOnNumbers([1, 2, 3], square);
-
-operateOnNumbers([1, 2, 3], double);
+/* operateOnNumbers([1, 2, 3], double); */
 
 operateOnNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], function(number){
   console.log(number/ 2);
@@ -393,3 +385,263 @@ function verifyUser(user) {
 
 
 verifyUser(user);
+
+const products= [
+  { name: "tv",
+    price: 100,
+    available: true
+  },
+  { name: "pc",
+    price: 600,
+    available: true
+  },
+  { name: "Chromecast",
+    price: 60,
+    available: false
+  },
+  { name: "Nintendo",
+    price: 350,
+    available: false
+  },
+  { name: "Playstation",
+    price: 450,
+    available: true
+  }
+];
+
+function available(products) {
+  return products.filter(function(product) {
+    return product.available === true;
+  });
+}
+
+function expensive(products) {
+  return products.filter(function(product) {
+    return product.price > 150;
+  });
+}
+
+function productFilter(products, filter) {
+  const filtered= filter(products);
+  console.log(filtered);
+}
+
+
+productFilter(products, expensive);
+
+function textSize(text, max) {
+
+  if (text.length > max){
+    console.log("TLTR")
+  }else{
+    console.log("Diesen Text Kannst du lesen")
+  }
+  
+}
+
+textSize("Dieser Text ist viel zu lange", 100);
+
+
+const functionArray= [
+  function start() {
+    x = 5;
+    return x;
+    
+  },
+
+  function add5(x) {
+    x += 5;
+    return x;
+  },
+
+  function divide(x) {
+    x= x/2;
+    return x;
+  },
+
+  function multi(x) {
+    x= x*5;
+    return x;
+  }
+
+]
+
+function arrayfunction(arr) {
+let result= arr[0]();
+
+
+arr.slice(1).forEach(newres => {
+  result = newres(result);
+});
+  console.log(result);
+}
+
+arrayfunction(functionArray);
+
+function getFullName(firstName, lastName) {
+  return(firstName + " " + lastName);
+};
+
+function getAge(birthYear){
+   const currentYear = new Date().getFullYear();
+   const age = currentYear - birthYear;
+   return age;
+}
+
+let name = getFullName("John", "Smith");
+let age = getAge(1988);
+
+let message = "My name is " + name + ". My age is " + age + ".";
+console.log(message);
+
+function timeTravel(year) {
+  let futureYear = year + 30;
+  console.log("Traveling 30 years to the future!");
+  return futureYear;
+  
+}
+
+console.log("Woah! The year is now : " + timeTravel(2023) + "!");
+
+function choosePill(pillColor) {
+  if (pillColor=== "red") {
+    return "Welcome to enlightenment! You've accepted the truth.";
+  } else if (pillColor === "blue") {
+    return "You've chosen to stay in the Matrix. Enjoy your steak!";
+  } else {
+    return "That's not a valid choice!";
+  }
+}
+
+console.log(choosePill("red")); // should print "Welcome to enlightenment..."
+console.log(choosePill("blue")); // should print "You've chosen to stay ..."
+console.log(choosePill("orange")); // should print "That's not a valid ...
+
+
+function theThreeStooges() {
+  let stooges = ["Moe", "Curly", "Larry"];
+  return stooges;
+}
+
+
+console.log(theThreeStooges()[2]);  //Task 1: Change this to Print Moe
+                       
+//Task 2: Print Curly
+//Task 3: Print Larry 
+
+function flyingCarSpecs() { 
+  let specifications = { 
+      model: "Nimbus 3000", 
+      maxSpeed: "500mph", 
+      maxAltitude: "10,000 feet",  
+      color: "Iridescent Blue" 
+   }; 
+
+  return specifications; 
+}
+
+console.log("Behold the " + flyingCarSpecs().model + "!");
+
+let message1 = "Experience the future with the " + flyingCarSpecs().model + ". Reach speeds of "+ flyingCarSpecs().maxSpeed+ ". Fly high up to "+ flyingCarSpecs().maxAltitude+ ". Reflect the color of the sky with its"+ flyingCarSpecs().color+ "body.";
+
+console.log(message1);
+
+//Task: Change the message variable so that it prints this message:
+
+/*Experience the future with the Nimbus 3000. Reach speeds of 500mph. Fly high up to 10,000 feet. Reflect the color of the sky with its Iridescent Blue body.*/
+
+
+function ironManCharacteristics() {
+  let name = "Iron Man";
+  let ability = "A mechanical suit";
+  let realName = "Tony Stark";
+
+  return {
+            superName: name,
+            mainAbility: ability,
+            actualName: realName
+          };
+}
+
+
+function hulkAttributes() {
+  let name = "Hulk";
+  let ability = "Super strong";
+  let realName = "Bruce Banner";
+
+
+  return {
+    superName: name,
+    mainAbility: ability,
+    actualName: realName,
+  };
+}
+
+
+
+function captainAmericaAttributes(){
+  let name = "Captain America";
+  let ability = "Super Strong";
+  let realName = "Steve Rogers";
+
+  return {
+    superName: name,
+    mainAbility: ability,
+    actualName: realName,
+  };
+}
+
+
+
+let ironMan = ironManCharacteristics();
+let hulk = hulkAttributes();
+let captainAmerica = captainAmericaAttributes();
+
+console.log("---FIRST HERO---");
+console.log(ironMan.superName);     
+console.log(ironMan.mainAbility);   
+console.log(ironMan.actualName);   
+
+console.log("---SECOND HERO---");
+console.log(hulk.superName);    // Not working
+console.log(hulk.mainAbility);  
+console.log(hulk.actualName);   // Not working
+
+console.log("---THIRD HERO---");
+console.log(captainAmerica.superName);    
+console.log(captainAmerica.mainAbility);  
+console.log(captainAmerica.actualName);   
+
+
+function codingSchool() {
+  let schoolData = {
+    students: ["Sven", "Balthasar", "Catherina", "Dankmar"],
+    teachers: ["Anita", "Chris", "Brandon"]
+  };
+  return schoolData;
+}
+
+let school = codingSchool().students[0];
+console.log(school);
+//Task 2: Print "Chris is a great teacher" to the console
+
+
+// Arrow Funktionen
+
+const cities = [
+    { name: "Berlin", citizens: 3645000 },
+    { name: "Paris", citizens: 2148000 },
+    { name: "New York", citizens: 8419000 },
+    { name: "Tokyo", citizens: 13929000 },
+    { name: "London", citizens: 8982000 },
+    { name: "Moskau", citizens: 12500000 },
+    { name: "Sydney", citizens: 5230000 },
+    { name: "Mumbai", citizens: 20185000 },
+    { name: "Los Angeles", citizens: 3980400 },
+    { name: "Rio de Janeiro", citizens: 6748000 }
+];
+
+
+let smallCities= cities.filter(city => city.citizens< 9000000);
+
+console.log(smallCities);
